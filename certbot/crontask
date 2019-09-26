@@ -1,0 +1,1 @@
+00 02 * */2 * /scripts/certbot-auto certonly  --non-interactive --agree-tos --email willem.houm@gmail.com -d www.msia17conferences.com -d msia17conferences.com --webroot -w /webroots/msia17conferences.com/
