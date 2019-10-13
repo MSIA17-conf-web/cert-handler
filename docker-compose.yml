@@ -4,12 +4,12 @@ services:
   cert_handler_http_server:
     build: 
       context: ./http_server
-      dockerfile: Dockerfile_dev
+      dockerfile: Dockerfile
     container_name: cert_handler_http_server
     hostname: cert_handler_http_server
+    restart: always
     ports:
-      - 80:80
-      - 443:443
+      - 80
     volumes: 
       - ./http_server/app:/app
       - certbot-webroot-msia17conferences:/app/public/.well-known

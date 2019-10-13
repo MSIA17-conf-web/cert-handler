@@ -6,7 +6,7 @@ FROM node:lts-slim
 
 # ENV https_proxy=http://PITC-Zscaler-EMEA-Amsterdam3PR.proxy.corporate.ge.com:80
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update
 
 RUN apt-get install git wget curl iputils-ping net-tools zsh -y
 
@@ -15,3 +15,5 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 WORKDIR /app
 
 RUN npm i -g nodemon
+
+RUN npm i
