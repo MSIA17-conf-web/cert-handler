@@ -1,32 +1,32 @@
 version: "3"
 
 services:
-  cert_handler_http_server:
-    build: 
-      context: ./http_server
-      dockerfile: Dockerfile
-    container_name: cert_handler_http_server
-    hostname: cert_handler_http_server
-    restart: always
-    ports:
-      - 80
-    volumes: 
-      - ./http_server/app:/app
-      - certbot-webroot-msia17conferences:/app/public/.well-known
-      - certbot-letsencrypt:/etc/letsencrypt
-    stdin_open: true
+  # cert_handler_http_server:
+  #   build: 
+  #     context: ./http_server
+  #     dockerfile: Dockerfile
+  #   container_name: cert_handler_http_server
+  #   hostname: cert_handler_http_server
+  #   restart: always
+  #   ports:
+  #     - 80
+  #   volumes: 
+  #     - ./http_server/app:/app
+  #     - certbot-webroot-msia17conferences:/app/public/.well-known
+  #     - certbot-letsencrypt:/etc/letsencrypt
+  #   stdin_open: true
     
-  certbot: 
-    build: 
-      context: ./certbot
-      dockerfile: Dockerfile
-    container_name: certbot
-    hostname: certbot  
-    restart: always
-    volumes :
-      - certbot-webroot-msia17conferences:/webroots/msia17conferences.com/.well-known
-      - certbot-letsencrypt:/etc/letsencrypt
-    stdin_open: true
+  # certbot: 
+  #   build: 
+  #     context: ./certbot
+  #     dockerfile: Dockerfile
+  #   container_name: certbot
+  #   hostname: certbot  
+  #   restart: always
+  #   volumes :
+  #     - certbot-webroot-msia17conferences:/webroots/msia17conferences.com/.well-known
+  #     - certbot-letsencrypt:/etc/letsencrypt
+  #   stdin_open: true
     
 volumes:
   certbot-webroot-msia17conferences:
